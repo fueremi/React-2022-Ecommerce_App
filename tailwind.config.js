@@ -3,7 +3,7 @@ module.exports = {
   theme: {
     extend: {
       animation: {
-        loader: "loader 3s infinite ease-in",
+        loader: "loader 2.5s infinite ease-in",
       },
       keyframes: {
         loader: {
