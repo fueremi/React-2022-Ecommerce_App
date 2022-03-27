@@ -1,5 +1,13 @@
+import { useState } from "react";
+import { useQuery } from "react-query";
+import { LinearProgress } from "./components";
+
 const App = () => {
-  return <div>App</div>;
+  return (
+    <div>
+      <LinearProgress />
+    </div>
+  );
 };
 
 export default App;
