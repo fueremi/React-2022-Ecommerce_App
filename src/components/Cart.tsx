@@ -1,4 +1,4 @@
-import CartItem from "./CartItem";
+import { CartItem } from "../components";
 import { IProduct } from "../interfaces/IProducts";
 
 interface IProps {
