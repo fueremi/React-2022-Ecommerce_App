@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useQuery } from "react-query";
-import { Item, LinearProgress } from "./components";
+import { Cart, Item, LinearProgress } from "./components";
 import { IProduct } from "./interfaces/IProducts";
 
 const fetchProducts = async (): Promise<IProduct[]> =>
@@ -16,7 +16,8 @@ const App = () => {
     fetchProducts
   );
 
-  const getTotalItems = () => null;
+  const getTotalItems = (items: IProduct[]) =>
+    items.reduce((ack: number, item) => ack + item.amount, 0);
   const handleAddToCart = (clickedItem: IProduct) => null;
   const handleRemoveFromCart = () => null;
 
@@ -25,7 +26,18 @@ const App = () => {
 
   return (
     <div className="flex flex-col h-screen">
-      <header className="py-2 bg-indigo-600 text-white flex items-center justify-end px-6 text-right">
+      {isOpen && (
+        <Cart
+          cartItems={cartItems}
+          addToCart={handleAddToCart}
+          removeFromCart={handleRemoveFromCart}
+          setIsOpen={setIsOpen}
+        />
+      )}
+      <header
+        className="py-2 bg-indigo-600 text-white flex items-center justify-end px-6 text-right"
+        onClick={() => setIsOpen(true)}
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="h-4 w-4 inline-block"
