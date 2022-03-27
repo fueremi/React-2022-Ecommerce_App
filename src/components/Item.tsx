@@ -6,7 +6,7 @@ interface IProps {
 }
 
 const Item: React.FC<IProps> = ({ item, handleAddToCard }) => (
-  <div className="rounded shadow-xl px-4 py-6 mb-2 hover:scale-110 hover:cursor-pointer transition w-full">
+  <div className="rounded shadow-xl px-4 py-6 mb-2 hover:scale-105 hover:cursor-pointer transition w-full lg:w-1/4 lg:h-[440px] lg:flex lg:flex-col lg:justify-around">
     <img src={item.image} alt={item.title} className="flex mb-4 h-40 mx-auto" />
 
     <div className="text-base font-bold leading-5 mb-1">{item.title}</div>
@@ -33,7 +33,10 @@ const Item: React.FC<IProps> = ({ item, handleAddToCard }) => (
         ? item.description.slice(0, 200) + "..."
         : item.description}
     </div>
-    <button className="bg-indigo-500 rounded w-full shadow-lg px-1 py-2 text-white text-xs hover:bg-indigo-400">
+    <button
+      className="bg-indigo-500 rounded w-full shadow-lg px-1 py-2 text-white text-xs hover:bg-indigo-400"
+      onClick={() => handleAddToCard(item)}
+    >
       Add To Cart
     </button>
   </div>

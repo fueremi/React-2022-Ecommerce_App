@@ -7,8 +7,8 @@ interface IProps {
 }
 
 const CartItem: React.FC<IProps> = ({ item, addToCart, removeFromCart }) => (
-  <div className="rounded shadow-lg px-3 py-4">
-    <div className="text-base font-bold">{item.title}</div>
+  <div className="rounded shadow px-4 py-3 bg-white shadow-slate-600 text-indigo-500 mb-2">
+    <div className="text-base font-bold leading-5 mb-2">{item.title}</div>
     <div className="flex justify-between items-center">
       <div className="text-xs">
         Price: <span className="font-bold">${item.price}</span>
